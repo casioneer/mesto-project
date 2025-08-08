@@ -2,6 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./pages/index.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mesto</title>
@@ -25,6 +29,29 @@
         Mesto"
         />
       </header>
+      <main class="main">
+        <div class="profile">
+          <div class="profile__avatar">
+            <img
+              class="profile__avatar"
+              src="./images/avatar.jpeg"
+              alt="Аватар пользователя"
+            />
+          </div>
+          <div class="profile__info">
+            <div class="profile__name-edit">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <div class="profile__edit">
+                <img class="profile__image" src="./images/pen.svg" />
+              </div>
+            </div>
+            <p class="profile__description">Исследователь океана</p>
+          </div>
+          <button class="profile__add-button">
+            <img class="profile__add-image" src="./images/add-button.svg" />
+          </button>
+        </div>
+      </main>
     </div>
     <script></script>
   </body>
