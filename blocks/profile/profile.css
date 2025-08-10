@@ -1,0 +1,64 @@
+@import url(./__add-button/profile__add-button.css);
+@import url(./__avatar/profile__avatar.css);
+@import url(./__info/profile__info.css);
+
+.profile {
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.profile__name-edit {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.profile__edit:hover {
+  opacity: 0.6; /* эффект наведения */
+}
+
+.profile__name {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 42px;
+  color: #fff;
+  line-height: 48px;
+  letter-spacing: 0%;
+
+  margin: 0;
+  padding-left: 0;
+}
+
+.profile__description {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 18px;
+
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  color: #fff;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.profile__edit {
+  background: transparent;
+  border: 1px solid #fff;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.profile__image {
+  width: 10px;
+  height: 10px;
+}

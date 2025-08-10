@@ -1,0 +1,35 @@
+.elements__element {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.element__title {
+  font-family: Inter;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.element__description {
+  display: flex;
+  justify-content: space-between; /* название слева, кнопка справа */
+  align-items: center;
+  width: 246px;
+  margin: 0 auto; /* выравнивание по центру */
+  padding: 12px 0; /* отступы сверху и снизу */
+  background-color: #fff;
+}
+
+.element__like-button {
+  width: 22px;
+  height: 19px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.element__like-button:hover {
+  opacity: 0.6; /* эффект наведения */
+}
