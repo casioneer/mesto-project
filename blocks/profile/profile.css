@@ -13,8 +13,12 @@
 
 .profile__name-edit {
   display: flex;
-  align-items: center; /* выравнивание по вертикали */
+  align-items: center;
   gap: 18px;
+}
+
+.profile__edit:hover {
+  opacity: 0.6; /* эффект наведения */
 }
 
 .profile__name {
@@ -43,12 +47,15 @@
 }
 
 .profile__edit {
+  background: transparent;
+  border: 1px solid #fff;
   width: 24px;
   height: 24px;
-  border: #fff 1px solid;
   display: flex;
-  justify-content: center; /* по горизонтали */
+  justify-content: center;
   align-items: center;
+  padding: 0;
+  cursor: pointer;
 }
 
 .profile__image {
