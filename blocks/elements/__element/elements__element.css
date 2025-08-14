@@ -33,3 +33,8 @@
 .element__like-button:hover {
   opacity: 0.6; /* эффект наведения */
 }
+
+.element__image {
+  max-width: 282px;
+  max-height: 282px;
+}

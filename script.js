@@ -49,3 +49,55 @@ likeButtons.forEach((button) => {
     }
   });
 });
+
+// 5 спринт
+
+const initialCards = [
+  {
+    name: "Архыз",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+  },
+  {
+    name: "Челябинская область",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+  },
+  {
+    name: "Иваново",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+  },
+  {
+    name: "Камчатка",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+  },
+  {
+    name: "Холмогорский район",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+  },
+  {
+    name: "Байкал",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+  },
+];
+
+const elements = document.querySelector(".elements");
+
+initialCards.forEach((card) => {
+  const divElement = document.createElement("div");
+  divElement.classList.add("elements__element"); // добавляем класс для стилизации
+
+  divElement.innerHTML = `
+    <img class="element__image" src="${card.link}" alt="${card.name}" />
+    <div class="element__description">
+      <h2 class="element__title">${card.name}</h2>
+      <button class="element__like-button">
+        <img
+          class="element__like-image"
+          src="./images/like-button-disabled.svg"
+          alt="Нравится"
+        />
+      </button>
+    </div>
+  `;
+
+  elements.appendChild(divElement); // добавляем элемент в контейнер на странице
+});
