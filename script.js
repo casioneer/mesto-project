@@ -31,24 +31,24 @@ popup.addEventListener("submit", function (e) {
 const likeButtons = document.querySelectorAll(".element__like-button");
 
 // Добавляем обработчик для каждой кнопки
-likeButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    // Находим изображение внутри текущей кнопки
-    const likeImage = this.querySelector(".element__like-image");
+// likeButtons.forEach((button) => {
+//   button.addEventListener("click", function () {
+//     // Находим изображение внутри текущей кнопки
+//     const likeImage = this.querySelector(".element__like-image");
 
-    // Проверяем текущее состояние
-    const isLiked = likeImage.src.includes("like-button-active.svg");
+//     // Проверяем текущее состояние
+//     const isLiked = likeImage.src.includes("like-button-active.svg");
 
-    // Меняем изображение и alt
-    if (isLiked) {
-      likeImage.src = "./images/like-button-disabled.svg";
-      likeImage.alt = "Нравится";
-    } else {
-      likeImage.src = "./images/like-button-active.svg";
-      likeImage.alt = "Убрать лайк";
-    }
-  });
-});
+//     // Меняем изображение и alt
+//     if (isLiked) {
+//       likeImage.src = "./images/like-button-disabled.svg";
+//       likeImage.alt = "Нравится";
+//     } else {
+//       likeImage.src = "./images/like-button-active.svg";
+//       likeImage.alt = "Убрать лайк";
+//     }
+//   });
+// });
 
 // 5 спринт
 
@@ -81,9 +81,9 @@ const initialCards = [
 
 const elements = document.querySelector(".elements");
 
-initialCards.forEach((card) => {
+function createCard(card) {
   const divElement = document.createElement("div");
-  divElement.classList.add("elements__element"); // добавляем класс для стилизации
+  divElement.classList.add("elements__element");
 
   divElement.innerHTML = `
     <img class="element__image" src="${card.link}" alt="${card.name}" />
@@ -99,5 +99,45 @@ initialCards.forEach((card) => {
     </div>
   `;
 
-  elements.appendChild(divElement); // добавляем элемент в контейнер на странице
+  // Логика лайка внутри
+  const likeButton = divElement.querySelector(".element__like-button");
+  likeButton.addEventListener("click", () => {
+    const likeImage = likeButton.querySelector(".element__like-image");
+    const isLiked = likeImage.src.includes("like-button-active.svg");
+    likeImage.src = isLiked
+      ? "./images/like-button-disabled.svg"
+      : "./images/like-button-active.svg";
+    likeImage.alt = isLiked ? "Нравится" : "Убрать лайк";
+  });
+
+  return divElement;
+}
+
+initialCards.forEach((card) => {
+  elements.appendChild(createCard(card));
+});
+
+// Попап новой карточки
+const profileAddButton = document.querySelector(".profile__add-button");
+const popupNewCard = document.getElementById("popup_new_card");
+const popupCloseNewCard = document.getElementById("popup_close_new_card");
+const formNewCard = document.getElementById("form_new_card");
+
+profileAddButton.addEventListener("click", () => {
+  popupNewCard.classList.add("popup_opened");
+});
+
+popupCloseNewCard.addEventListener("click", () => {
+  popupNewCard.classList.remove("popup_opened");
+});
+
+formNewCard.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const newCard = {
+    name: formNewCard.elements.place.value,
+    link: formNewCard.elements.link.value,
+  };
+  elements.prepend(createCard(newCard));
+  popupNewCard.classList.remove("popup_opened");
+  formNewCard.reset();
 });
