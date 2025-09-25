@@ -1,6 +1,9 @@
 .elements__element {
   background-color: #fff;
   border-radius: 10px;
+  position: relative; /* чтобы overlay позиционировался относительно этой карточки */
+  display: inline-block;
+  overflow: hidden;
 }
 
 .element__title {
@@ -35,6 +38,26 @@
 }
 
 .element__image {
-  max-width: 282px;
-  max-height: 282px;
+  width: 100%;
+  height: 282px;
+  display: block;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 10px; /* отступ сверху */
+  right: 10px; /* отступ справа */
+}
+
+.delete_button {
+  background: none; /* убираем фон */
+  border: none; /* убираем рамку */
+  padding: 0; /* убираем отступы */
+  cursor: pointer; /* чтобы был виден "палец" при наведении */
+}
+
+.delete_image {
+  width: 20px;
+  height: 20px;
 }

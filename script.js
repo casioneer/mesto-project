@@ -67,6 +67,11 @@ function createCard(card) {
 
   divElement.innerHTML = `
     <img class="element__image" src="${card.link}" alt="${card.name}" />
+    <div class="overlay">
+    <button class="delete_button">
+      <img src="trash.svg" alt="Удалить карточку" class="delete_image" />
+      </button>    
+    </div>
     <div class="element__description">
       <h2 class="element__title">${card.name}</h2>
       <button class="element__like-button">
